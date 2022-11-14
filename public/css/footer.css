@@ -1,0 +1,28 @@
+footer {
+    display: flex;
+    background-color: #aed6f1;
+    flex-direction: row;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerleft {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+.footerright {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(0, 0, 0, 0.5);
+    padding: 20px;
+}
+.title {
+    font-weight: 1000;
+    font-size: 17px;
+}
