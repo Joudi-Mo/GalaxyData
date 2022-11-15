@@ -3,8 +3,8 @@ footer {
     background-color: #aed6f1;
     flex-direction: row;
     bottom: 0;
-    position: absolute;
-    width: 100%;
+    position: relative;
+    padding: 0px 10%;
     justify-content: space-between;
     align-items: center;
 }
@@ -13,14 +13,14 @@ footer {
     font-weight: 500;
     font-size: 16px;
     color: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 10px 0px;
 }
 .footerright {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: rgb(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 10px 0px;
 }
 .title {
     font-weight: 1000;

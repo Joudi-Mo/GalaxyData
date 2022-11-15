@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 10%;
     flex-direction: row;
     background-color: #242b36;
 }
@@ -58,7 +58,7 @@ a {
     background-color: #242b36;
 }
 .cta button {
-    padding: 9px 25px;
+    padding: 2px 20px;
     background-color: rgba(0, 231, 131, 1);
     border: none;
     border-radius: 50px;
@@ -86,7 +86,7 @@ a {
 }
 
 .atc button {
-    padding: 9px 25px;
+    padding: 2px 25px;
     background-color: rgba(36, 43, 54, 1);
     border: 2px solid rgba(245, 245, 245, 1);
     border-radius: 50px;
