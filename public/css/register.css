@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+/* Globale CSS variabelen */
+:root{
+    --primary: #FC7D7D;
+    --primary_alt: #d87171;
+    --light: #eee;
+    --dark_accent: #24252A;
+    --grey: #CFCFCF;
+    --green: #76D7C4;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: var(--grey);
+}
+.container{
+    background-color: #fff;
+    width: 70%;
+    min-width: 420px;
+    padding: 35px 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+}
+h1{
+    position: relative;
+    font-style: 30px;
+    text-align: center;
+    color: var(--dark_accent);
+}
+p{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: var(--dark_accent);
+    font-size: 14px;
+    font-weight: 400;
+}
+form{
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+}
+.row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px 30px;
+    margin-bottom: 20px;
+}
+label{
+    color: var(--dark_accent);
+    font-style: 14px;
+    /* font-weight: 500; */
+}
+input, select{
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border: 1.2px solid var(--grey);
+    margin-top: 5px;
+    outline: none;
+    color: #333;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+input:focus,
+select:focus{
+    outline: none;
+    border-color: var(--primary);
+}
+button{
+    border: none;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    background: var(--primary_alt);
+}
+form h3{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+
+    color: #333;   
+    width: 100%;
+    text-align: start;
+}
+form h3 a{
+    color: var(--primary);
+    text-decoration: none;
+}
+form h3 a:hover{
+    text-decoration: underline;
+}
