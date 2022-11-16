@@ -102,7 +102,7 @@ input {
     justify-content: center;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    color: #f5f5f5;
+    color: rgba(255, 254, 255, 1);
     font-weight: 500;
     font-size: 13px;
 }
@@ -122,4 +122,14 @@ input {
 .fa-solid.fa-thumbs-up,
 .fa-solid.fa-thumbs-down {
     margin-right: 5px;
+}
+
+.onderkantrechts .tags .artikeltag:hover {
+    background-color: rgba(36, 43, 54, 0.8);
+    color: rgba(255, 254, 255, 0.8);
+}
+
+.onderkantrechts .tags .artikeltag {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
 }

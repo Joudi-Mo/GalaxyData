@@ -63,7 +63,7 @@ if (isset($_POST['submit']) && !empty(trim($_POST["email"])) && !empty(trim($_PO
 
 <body id="body">
     <div class="wrapper">
-        <h2>Inloggen</h2>
+        <h2>Sign In</h2>
         <form action="login.php" method="POST">
             <p class="err-text">
                 <?php
@@ -83,7 +83,7 @@ if (isset($_POST['submit']) && !empty(trim($_POST["email"])) && !empty(trim($_PO
                 <input type="submit" value="Log in" name="submit">
             </div>
             <div class="text">
-                <h3>Nieuw?<a href="register.php"> Registreer je je hier!</a></h3>
+                <h3>New? Sign up<a href="/register"> here! </a></h3>
             </div>
         </form>
     </div>

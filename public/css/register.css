@@ -1,112 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap");
 /* Globale CSS variabelen */
-:root{
-    --primary: #FC7D7D;
-    --primary_alt: #d87171;
+:root {
+    --primary: #00e783;
+    --primary_alt: rgba(0, 231, 131, 0.5);
     --light: #eee;
-    --dark_accent: #24252A;
-    --grey: #CFCFCF;
-    --green: #76D7C4;
+    --dark_accent: #24252a;
+    --grey: #cfcfcf;
+    --green: #76d7c4;
 }
 
-*{
+/* Een aantal properties resetten */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-body{
-    height: 100vh;
-    background-color: var(--grey);
+body {
+    /* background-color: #CFCFCF; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #4070f4; */
+    background: #24354d;
 }
-.container{
+.wrapper {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
     background-color: #fff;
-    width: 70%;
-    min-width: 420px;
-    padding: 35px 50px;
-    transform: translate(-50%, -50%);
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    height: 40vh;
+}
+.wrapper h2 {
+    position: relative;
+    font-style: 22px;
+    font-weight: 600;
+    columns: #333;
+}
+.wrapper h2::before {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 50%;
-    border-radius: 10px;
-    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 28px;
+    border-radius: 12px;
+    /* background: #4070f4; */
+    background: var(--primary);
 }
-h1{
-    position: relative;
-    font-style: 30px;
-    text-align: center;
-    color: var(--dark_accent);
+.wrapper form {
+    margin-top: 30px;
 }
-p{
-    position: relative;
-    margin: auto;
+.wrapper form .input-box {
+    height: 52px;
+    margin: 30px 0;
+}
+form .input-box input {
+    height: 100%;
     width: 100%;
-    text-align: center;
-    color: var(--dark_accent);
-    font-size: 14px;
-    font-weight: 400;
-}
-form{
-    width: 100%;
-    position: relative;
-    margin: 30px auto 0 auto;
-}
-.row{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px 30px;
-    margin-bottom: 20px;
-}
-label{
-    color: var(--dark_accent);
-    font-style: 14px;
-    /* font-weight: 500; */
-}
-input, select{
-    width: 100%;
-    font-weight: 400;
-    padding: 8px 10px;
-    border: 1.2px solid var(--grey);
-    margin-top: 5px;
     outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
     color: #333;
+    border: 1.5px solid #c7bebe;
     border-bottom-width: 2.5px;
     border-radius: 6px;
     transition: all 0.3s ease;
 }
-input:focus,
-select:focus{
-    outline: none;
-    border-color: var(--primary);
+.input-box input:focus,
+.input-box input:valid {
+    /* border-color: #4070f4; */
+    border-color: var(--dark_accent);
 }
-button{
-    border: none;
-    padding: 10px 20px;
-    background: var(--primary);
+
+form .policy {
+    display: flex;
+    align-items: center;
+}
+form h3 {
+    color: #707070;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+form .input-box.button input {
     color: #fff;
-    border-radius: 6px;
     letter-spacing: 1px;
     border: none;
+    /* background: #4070f4; */
+    background: var(--primary);
     cursor: pointer;
 }
-button:hover{
+form .input-box.button input:hover {
+    /* background: #0e4bf1; */
     background: var(--primary_alt);
 }
-form h3{
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 10px;
-
-    color: #333;   
+form .text h3 {
+    color: #333;
     width: 100%;
-    text-align: start;
+    text-align: center;
 }
-form h3 a{
+form .text h3 a {
+    /* color: #4070f4; */
     color: var(--primary);
     text-decoration: none;
 }
-form h3 a:hover{
+form .text h3 a {
     text-decoration: underline;
+}
+.err-text {
+    color: red;
+}
+
+.input-box.button input {
+    margin-top: 20px;
+}
+.label {
+    margin-bottom: 5px;
+}
+form {
+    height: 100%;
 }

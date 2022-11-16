@@ -20,8 +20,8 @@
    
 </nav>
 <div class="buttons">
-    <a class="atc" href="#"><button>Log in</button></a>
-    <a class="cta" href="#"><button>Sign in</button></a>
+    <a class="atc" href="/login"><button>Log in</button></a>
+    <a class="cta" href="/register"><button>Sign Up</button></a>
 </div>
     
 </header>

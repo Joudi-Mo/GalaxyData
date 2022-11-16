@@ -5,74 +5,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registreren</title>
+    <title>Inloggen</title>
     <link rel="stylesheet" href="css/register.css">
-
+    <!-- fontawesome.com -->
+    <script src="https://kit.fontawesome.com/a333f4247d.js" crossorigin="anonymous"></script>
 </head>
+<?php
+// Initialize the session
+session_start();
+$_SESSION = [];
+SESSION_destroy();
+session_start();
+$_SESSION["is_logged_in"] = false;
+$_SESSION["id"] = null;
+$_SESSION["username"] = null;
+$_SESSION["role"] = null;
+$username = $password = $login_err = "";
+// Include database file
 
-<body>
-    <div class="container">
-        <h1>Registreren</h1>
-        <P>Maak een account aan</P>
-        <form action="register_verwerk.php" method="POST">
-            <div class="row">
-                <div class="column">
-                    <label for="firstname">Firstname</label>
-                    <input name="firstname" type="text" id="firstname" placeholder="Your name">
-                </div>
-                <div class="column">
-                    <label for="lastname">Lastname</label>
-                    <input name="lastname" type="text" id="lastname" placeholder="Your lastname">
-                </div>
+
+if (isset($_POST['submit']) && !empty(trim($_POST["email"])) && !empty(trim($_POST["pass"]))) {
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["pass"]);
+
+    $sql = "SELECT id, firstname, password, email, role FROM `users` where email = '$email'";
+    if ($result = mysqli_query($conn, $sql)) {
+        $data = mysqli_fetch_assoc($result);
+    }
+
+
+    if (!is_null($data) || !empty($data)) {
+        if ($email == $data['email'] && $password == $data['password']) {
+            // Store data in session variables
+            $_SESSION["is_logged_in"] = true;
+            $_SESSION["id"] = $data['id'];
+            $_SESSION["username"] = $data['firstname'];
+            $_SESSION["role"] = $data['role'];
+
+            if ($data['role'] == 'klant') {
+                header("location: klant/bestellen.php");
+            } else {
+                header("location: medewerker/producten_overzicht.php");
+            }
+        } else {
+            $login_err = "Email of wachtwoord niet correct!";
+        }
+    }
+    else{
+        $login_err = "Deze email bestaat niet";
+    }
+
+    mysqli_close($conn); // Sluit de database verbinding
+} elseif (isset($_POST['submit'])) {
+    $login_err = "Een van de velden of beide is leeg";
+}
+?>
+
+<body id="body">
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <form action="login.php" method="POST">
+            <p class="err-text">
+                <?php
+                if (!empty($login_err)) {
+                    echo $login_err;
+                }
+                ?>
+            </p>
+            <div class="input-box">
+                <label for="username">Username</label>
+                <input name="text" type="text" placeholder="Enter your username">
             </div>
-            <div class="row">
-                <div class="column">
-                    <label for="email">Email</label>
-                    <input name="email" type="text" id="email" placeholder="Your email">
-                </div>
-                <div class="column">
-                    <label for="pass">Password</label>
-                    <input name="pass" type="password" id="pass" placeholder="Your password">
-                </div>
+            <div class="input-box">
+                <label for="username">Email</label>
+                <input name="email" type="email" placeholder="Enter your email">
             </div>
-            <div class="row">
-                <div class="column">
-                    <label for="birthday">Date of birth</label>
-                    <input name="birthday" type="date" id="birthday" placeholder="Your birthday" maxlength="10"
-                        min="1960-01-01" max="2010-01-01">
-                </div>
-                <div class="column">
-                    <label for="pnumber">Phonenumber</label>
-                    <input name="pnumber" type="text" id="pnumber" placeholder="Your lastname" maxlength="10">
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <label for="adres">Address</label>
-                    <input name="adres" type="text" id="adres" placeholder="Your address">
-                </div>
-                <div class="column">
-                    <label for="zipcode">Zipcode</label>
-                    <input name="zipcode" type="text" id="zipcode" placeholder="Your password">
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <label for="city">City</label>
-                    <input name="city" type="text" id="city" placeholder="Your email">
-                </div>
-                <div class="column">
-                    <label for="role">Role</label>
-                    <select name="role" id="role">
-                        <option value="Klant">Klant</option>
-                        <option value="Medewerker">Medewerker</option>
-                        <option value="Manager">Manager</option>
-                    </select>
-                </div>
+            <div class="input-box">
+                <label for="username">Password</label>
+                <input name="pass" type="password" placeholder="Enter your password">
             </div>
 
-            <button name="submit">Submit</button>
-            <h3>Heeft al een account? <a href="login.php">Login</a></h3>
+            <div class="input-box button">
+                <input type="submit" value="Sign up" name="submit">
+            </div>
+            <div class="text">
+                <h3>Already have an account? Sign in <a href="/login">here! </a></h3>
+            </div>
         </form>
     </div>
 </body>
