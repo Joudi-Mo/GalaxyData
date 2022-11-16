@@ -15,4 +15,4 @@
         test
     @include('footer')
 </body>
-</html>
+ 

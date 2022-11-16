@@ -24,7 +24,18 @@
                  millions of people GalaxyData is the internet's info library that is used by <br> 
                  millions of people GalaxyData is the internet's info library that is used by <br> 
                  millions of people </p>
+                 <p class="title"> Contact</p>
+                    <p>GalaxyData is the internet's info library that is used by <br> 
+                        millions of people GalaxyData is the internet's info library that is used by <br> 
+                        millions of people GalaxyData is the internet's info library that is used by <br> 
+                        millions of people GalaxyData is the internet's info library that is used by <br> 
+                        millions of people GalaxyData is the internet's info library that is used by <br> 
+                      millions of people GalaxyData is the internet's info library that is used by <br> 
+                      millions of people GalaxyData is the internet's info library that is used by <br> 
+                      millions of people GalaxyData is the internet's info library that is used by <br> 
+                      millions of people </p>
         </div>
+        
         <img class="aboutpicture" src="assets/library.jpg" alt="" srcset="">
     </div>
    

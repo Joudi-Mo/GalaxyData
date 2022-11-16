@@ -1,0 +1,9 @@
+.artikels {
+    background-color: #24354d;
+    padding: 0px 10%;
+    height: 100%;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+}
