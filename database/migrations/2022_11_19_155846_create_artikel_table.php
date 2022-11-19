@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
-            $table->id('likes');
-            $table->id('dislikes');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->integer('likes');
+            $table->integer('dislikes');
             $table->string('title');
             $table->longText('content');
             $table->boolean('populair_artikel');
