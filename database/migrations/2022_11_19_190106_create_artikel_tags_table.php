@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('artikel_tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('artikel_id')->constrained('artikel')->onDelete('NO ACTION');
-            $table->foreignId('tag_id')->constrained('tag')->onDelete('NO ACTION');
+            $table->foreign('artikel_id')->references('id')->on('artikel');
+            $table->foreign('tag_id')->references('id')->on('tag');
             $table->timestamps();
         });
     }
