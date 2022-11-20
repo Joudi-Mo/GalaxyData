@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Tag extends Model
 {
     use HasFactory;
-    public function article_tag()
+    public function article_tag()   
     {
         return $this->hasMany(Article_tag::class);
     }

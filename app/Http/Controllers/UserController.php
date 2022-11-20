@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Foundation\Auth\User;
 
 class UserController extends Controller
 {
     // show register/ crate form 
     public function create() {
-        return view('register');
+        return view('users.register');
     }
 
     //creating user 
