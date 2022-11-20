@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreignId('user_id')->constrained('users')->onDelete('NO ACTION');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('NO ACTION');
             $table->integer('likes');
             $table->integer('dislikes');
             $table->string('title');
