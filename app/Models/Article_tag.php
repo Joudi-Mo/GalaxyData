@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Article_tag extends Model
 {
-    use HasFactory;
-
+    use HasFactory; 
+   //MET FURKAN
     public function article()
     {
         return $this->belongsTo(Article::class);
