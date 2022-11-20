@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Models\Article;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,7 @@ use App\Models\Article;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home', [
-        'listings' => Article::all()
-    ]);
-});
+Route::get('/', [ListingController::class, 'index']);
 
 Route::get('/about', function () {
     return view('contact');
