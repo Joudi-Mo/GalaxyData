@@ -50,11 +50,11 @@
                     <div class="title">{{$listing->title}}</div>
                     <div class="artikeltags">
 
-@foreach
-<div class="artikeltag">
-    {{ $listing->tag}}
-</div>
-@endforeach
+                            {{-- @foreach
+                            <div class="artikeltag">
+                                {{ $listing->tag}}
+                            </div>
+                            @endforeach --}}
 
                         <div class="artikeltag">
                             database
