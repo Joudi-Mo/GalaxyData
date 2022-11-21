@@ -23,9 +23,25 @@ class DatabaseSeeder extends Seeder
         Tag::factory(5)->create();
         Category::factory(5)->create();
         Article::factory(5)->create();
-        $this->call(
-            ArticleTagSeeder::class
-        );
+        // ArticleTagSeeder::run();
+
+    
         
+        // $userIDs = DB::table('articles')->pluck('id');
+        // $categoryIDs = DB::table('tags')->pluck('id');
+        // return [
+        //     'tag_id' => $this->faker->randomElement($userIDs),
+        //     'article_id' => $this->faker->randomElement($categoryIDs),           
+        // ];
+
+        $this->call([
+            ArticleTagSeeder::class,
+        ]);
+        
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
