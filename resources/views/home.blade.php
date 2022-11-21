@@ -34,66 +34,76 @@
                         database
                     </div>
                 </div>
-               
+
             </div>
-           
-           
-            
-            
+
+
+
+
 
         </div>
         <div class="artikels">
             @unless(count($listings) == 0)
             @foreach($listings as $listing)
-                <div class="artikel">
-                    <div class="bovenkant">
-                        <div class="title">{{$listing->title}}</div>
-                        <div class="artikeltags">
-                            <div class="artikeltag">
-                                database
-                            </div>
-                            <div class="artikeltag">
-                                database
-                            </div>
-                            <div class="artikeltag">
-                                database
-                            </div>
-                        </div>
-                        
+            <div class="artikel">
+                <div class="bovenkant">
+                    <div class="title">{{$listing->title}}</div>
+                    <div class="artikeltags">
 
-                    </div>
-                    <div class="content">
-                        <p>{{$listing->body}}
-                        </p>
-                    </div>
-                    <div class="onderkant">
-                        <div class="onderkantlinks">
-                            <div class="username">BurgerGamer67</div>
-                            <div class="datum">10-11-2022</div>
+@foreach
+<div class="artikeltag">
+    {{ $listing->tag}}
+</div>
+@endforeach
+
+                        <div class="artikeltag">
+                            database
                         </div>
-                        <div class="onderkantrechts"> 
-                            <div class="tags">
-                                <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
-                                </div>
-                                <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
-                                </div>
-                            
-                            </div>
+                        <div class="artikeltag">
+                            database
+                        </div>
+                        <div class="artikeltag">
+                            database
                         </div>
                     </div>
-                 
-        
+
+
                 </div>
-            @endforeach  
+                <div class="content">
+                    <p>{{$listing->body}}
+                    </p>
+                </div>
+                <div class="onderkant">
+                    <div class="onderkantlinks">
+                        {{-- <div class="username">BurgerGamer67</div> --}}
+                        <div class="username">
+                            {{ $listing->user->name }}
+                        </div>
+                        <div class="datum">{{ $listing->user->created_at }}</div>
+                    </div>
+                    <div class="onderkantrechts">
+                        <div class="tags">
+                            <div class="artikeltag">
+                                <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
+                            </div>
+                            <div class="artikeltag">
+                                <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            @endforeach
             @else
-             <p>no words found be the first one to make it</p>
+            <p>no words found be the first one to make it</p>
             @endunless
-           
+
         </div>
     </div>
-    
+
 
 
     @include('footer')

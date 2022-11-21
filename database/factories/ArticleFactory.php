@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,14 +17,18 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
+        $userIDs = DB::table('users')->pluck('id');
+        $categoryIDs = DB::table('categories')->pluck('id');
         return [
-            'user_id' => '1',
-            'category_id' => '1',
+            // 'user_id' => '1',
+            // 'category_id' => '1',
+            'user_id' => $this->faker->randomElement($userIDs),
+            'category_id' => $this->faker->randomElement($categoryIDs),
             'title' => $this->faker->word(),
             'body' => $this->faker->paragraph(5),
             'likes' => $this->faker->numberBetween(0, 40),
             'dislikes' => $this->faker->numberBetween(0, 40),
-            'is_populair' => $this->faker->boolean(),
+            'is_populair' => '0',
             
         ];
     }
