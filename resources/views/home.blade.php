@@ -36,12 +36,8 @@
                 </div>
 
             </div>
-
-
-
-
-
         </div>
+
         <div class="artikels">
             @unless(count($listings) == 0)
             @foreach($listings as $listing)
@@ -50,11 +46,11 @@
                     <div class="title">{{$listing->title}}</div>
                     <div class="artikeltags">
 
-@foreach
-<div class="artikeltag">
-    {{ $listing->tag}}
-</div>
-@endforeach
+                        {{-- @foreach
+                        <div class="artikeltag">
+                            {{ $listing->tag}}
+                        </div>
+                        @endforeach --}}
 
                         <div class="artikeltag">
                             database
@@ -66,8 +62,6 @@
                             database
                         </div>
                     </div>
-
-
                 </div>
                 <div class="content">
                     <p>{{$listing->body}}
@@ -75,11 +69,12 @@
                 </div>
                 <div class="onderkant">
                     <div class="onderkantlinks">
-                        {{-- <div class="username">BurgerGamer67</div> --}}
                         <div class="username">
                             {{ $listing->user->name }}
                         </div>
-                        <div class="datum">{{ $listing->user->created_at }}</div>
+                        {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
+                        <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div>
+
                     </div>
                     <div class="onderkantrechts">
                         <div class="tags">
@@ -89,9 +84,10 @@
                             <div class="artikeltag">
                                 <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
                             </div>
-
                         </div>
                     </div>
+
+
                 </div>
 
 
@@ -100,13 +96,11 @@
             @else
             <p>no words found be the first one to make it</p>
             @endunless
-
         </div>
-    </div>
 
 
 
-    @include('footer')
+        @include('footer')
 </body>
 
 </html>
