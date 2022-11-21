@@ -28,10 +28,12 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('login');
 });
- 
 
-//show register form 
+
+//show register form
 Route::get('/register', [UserController::class, 'create']);
 
-//create new user 
+//create new user
 Route::get('/users', [UserController::class, 'store']);
+
+//show users
