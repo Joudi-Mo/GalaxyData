@@ -4,6 +4,7 @@ use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,9 @@ Route::get('/login', function () {
 
 
 //show register form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create']); 
 
 //create new user
 Route::get('/users', [UserController::class, 'index']);
 
-//show users
+Route::get('/category', [CategoryController::class, 'index']);
