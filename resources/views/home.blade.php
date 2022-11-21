@@ -46,21 +46,21 @@
                     <div class="title">{{$listing->title}}</div>
                     <div class="artikeltags">
 
-                        {{-- @foreach
+                        @foreach ($listing->tags as $tag)
                         <div class="artikeltag">
-                            {{ $listing->tag}}
+                            {{ $tag->tag}}
                         </div>
-                        @endforeach --}}
+                        @endforeach
 
-                        <div class="artikeltag">
-                            database
+                        {{-- <div class="artikeltag">
+                            Tag 1
                         </div>
                         <div class="artikeltag">
-                            database
+                            Tag 2
                         </div>
                         <div class="artikeltag">
-                            database
-                        </div>
+                            Tag 3
+                        </div> --}}
                     </div>
                 </div>
                 <div class="content">

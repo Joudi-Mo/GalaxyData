@@ -2,41 +2,14 @@
 
 namespace Database\Seeders;
 
-use Faker\Generator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Container\Container;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+
 
 class ArticleTagSeeder extends Seeder
 {
-    /**
-     * The current Faker instance.
-     *
-     * @var \Faker\Generator
-     */
-    protected $faker;
 
-    /**
-     * Create a new seeder instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->faker = $this->withFaker();
-    }
-
-
-    /**
-     * Get a new Faker instance.
-     *
-     * @return \Faker\Generator
-     */
-    protected function withFaker()
-    {
-        return Container::getInstance()->make(Generator::class);
-    }
 
     /**
      * Run the database seeds.
@@ -45,11 +18,12 @@ class ArticleTagSeeder extends Seeder
      */
     public function run()
     {
-        $userIDs = DB::table('articles')->pluck('id');
-        $categoryIDs = DB::table('tags')->pluck('id');
-        return [
-            'tag_id' => $this->faker->randomElement($userIDs),
-            'article_id' => $this->faker->randomElement($categoryIDs),
-        ];
+
+        for ($x = 0; $x < 10; $x++) {
+            DB::table('article_tags')->insert([
+                'article_id' => DB::table('articles')->pluck('id')->random(),
+                'tag_id'  => DB::table('tags')->pluck('id')->random()
+            ]);
+        }
     }
 }

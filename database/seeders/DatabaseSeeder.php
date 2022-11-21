@@ -7,12 +7,8 @@ namespace Database\Seeders;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Article;
-use App\Models\Listing;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
-use Database\Factories\TagFactory;
-use Illuminate\Support\Facades\DB;
-use Database\Factories\Article_TagFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,22 +23,9 @@ class DatabaseSeeder extends Seeder
         Tag::factory(5)->create();
         Category::factory(5)->create();
         Article::factory(5)->create();
-        ArticleTagSeeder::run();
-
-    
+        $this->call(
+            ArticleTagSeeder::class
+        );
         
-        $userIDs = DB::table('articles')->pluck('id');
-        $categoryIDs = DB::table('tags')->pluck('id');
-        return [
-            'tag_id' => $this->faker->randomElement($userIDs),
-            'article_id' => $this->faker->randomElement($categoryIDs),           
-        ];
-
-        
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
