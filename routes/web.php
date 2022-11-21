@@ -34,6 +34,6 @@ Route::get('/login', function () {
 Route::get('/register', [UserController::class, 'create']);
 
 //create new user
-Route::get('/users', [UserController::class, 'store']);
+Route::get('/users', [UserController::class, 'index']);
 
 //show users
