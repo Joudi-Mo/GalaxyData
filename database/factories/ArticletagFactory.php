@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class Article_TagFactory extends Factory
+class ArticletagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,7 +21,7 @@ class Article_TagFactory extends Factory
         $categoryIDs = DB::table('tags')->pluck('id');
         return [
             'tag_id' => $this->faker->randomElement($userIDs),
-            'article_id' => $this->faker->randomElement($categoryIDs),           
+            'article_id' => $this->faker->randomElement($categoryIDs),
         ];
     }
 }

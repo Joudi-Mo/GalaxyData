@@ -45,11 +45,11 @@ class ArticleTagSeeder extends Seeder
      */
     public function run()
     {
-        $userIDs = DB::table('articles')->pluck('id');
-        $categoryIDs = DB::table('tags')->pluck('id');
-        return [
-            'tag_id' => $this->faker->randomElement($userIDs),
-            'article_id' => $this->faker->randomElement($categoryIDs),
-        ];
+        // $userIDs = DB::table('articles')->pluck('id');
+        // $categoryIDs = DB::table('tags')->pluck('id');
+        // return [
+        //     'tag_id' => $this->faker->randomElement($userIDs),
+        //     'article_id' => $this->faker->randomElement($categoryIDs),
+        // ];
     }
 }
