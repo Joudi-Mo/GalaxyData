@@ -11,7 +11,7 @@
     <link rel="stylesheet"  href="css/app.css">
     <link rel="stylesheet" href="css/table.css">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Users</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     <td data-label="id">{{$user->id}}</td>
                     <td data-label="firstname">{{$user->name}}</td>
                     <td data-label="lastname">{{$user->email}}</td>
-                    <td data-label="email">{{$user->created_at}}</td>
+                    <td data-label="email">{{ date('d-m-Y', strtotime($user->created_at)) }}</td>
                    
                     
                     {{-- <td data-label="update"><a href="klanten-update.php?id={{$user->id}}"

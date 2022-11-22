@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +8,7 @@
     <link rel="stylesheet"  href="css/app.css">
     <link rel="stylesheet" href="css/table.css">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Categories</title>
 </head>
 
 <body>
@@ -37,7 +34,7 @@
                 <tr>
                     <td data-label="id">{{$cat->id}}</td>
                     <td data-label="firstname">{{$cat->category}}</td>
-                    <td data-label="firstname">{{$cat->created_at}}</td>
+                    <td data-label="firstname">{{ date('d-m-Y', strtotime($cat->created_at)) }}</td>
                   
                    
                     
