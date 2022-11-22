@@ -101,3 +101,30 @@ tr:nth-child(odd) {
 i {
     color: black;
 }
+
+.yes {
+    padding: 2px 30px;
+    background-color: rgba(0, 231, 131, 1);
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #242b36;
+    font-weight: 500;
+}
+
+.yes:hover {
+    background-color: rgba(0, 231, 131, 0.5);
+    /* background-color: rgba(36, 43, 54); */
+    /* color: #f5f5f5;
+    border: 1px solid #f5f5f5; */
+}
+.tablebutton {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}

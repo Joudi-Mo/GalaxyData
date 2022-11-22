@@ -1,0 +1,21 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    background-color: #fffeff;
+    border-radius: 30px;
+    padding: 20px 30px;
+    width: 50vh;
+    justify-content: space-between;
+}
+input {
+    height: 100%;
+    width: 95%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #fffeff;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
