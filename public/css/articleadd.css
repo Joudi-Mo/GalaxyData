@@ -6,7 +6,7 @@
     padding: 10px 15px;
     width: 50vh;
     justify-content: space-between;
-    margin: 20px;
+    margin: 20px 20px 20px 0px;
 }
 input {
     height: 100%;
@@ -21,16 +21,32 @@ input {
     transition: all 0.3s ease;
     font-family: "Poppins", sans-serif;
 }
-h1 {
+.titles {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: f;
     align-items: center;
-    font-size: larger;
+    font-size: medium;
     font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 .table-container {
     font-family: "Poppins", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 80%vw;
+}
+body {
+    background-color: #24354d;
+    font-family: "Poppins", sans-serif;
+}
+.articleadd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
 }
 .yes {
     padding: 2px 30px;
@@ -45,4 +61,5 @@ h1 {
     justify-content: center;
     color: #242b36;
     font-weight: 500;
+    margin-top: 20px;
 }

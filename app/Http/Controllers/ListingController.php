@@ -13,4 +13,9 @@ class ListingController extends Controller
             'listings' => Article::all()
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.articleadd');
+    }
 }

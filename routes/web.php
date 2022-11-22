@@ -40,3 +40,5 @@ Route::get('/users', [UserController::class, 'index']);
 Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
+
+Route::get('/articleadd', [ListingController::class, 'create']);

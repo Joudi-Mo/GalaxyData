@@ -29,7 +29,7 @@
      
 
       <div class="tablebutton">
-        <a class="" href="admin.categoryadd"><button class="yes">Add category</button></a>
+        <a class="" href="admin.categoryadd"><button class="yes">Add</button></a>
     </div>
     </div>
 
