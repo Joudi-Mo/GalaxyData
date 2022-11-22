@@ -24,17 +24,12 @@
                     </div>
                 </div>
                 <div class="tags">
+                    @foreach ($tests as $test)
                     <div class="tag">
-                        database
+                        <a class="hometags" href="/?tag={{ $test->tag}}">{{ $test->tag}}</a>
                     </div>
-                    <div class="tag">
-                        database
-                    </div>
-                    <div class="tag">
-                        database
-                    </div>
+                    @endforeach
                 </div>
-
             </div>
         </div>
 
