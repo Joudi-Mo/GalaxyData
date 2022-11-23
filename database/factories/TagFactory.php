@@ -17,8 +17,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'tag' => $this->faker->word(),
-        ];
+        // return [
+        //     'tag' => $this->faker->word(),
+        // ];
+
     }
 }
