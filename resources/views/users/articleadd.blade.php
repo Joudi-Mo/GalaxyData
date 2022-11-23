@@ -45,8 +45,8 @@
                     <option value="audi">Audi</option>
                   </select>
                 </div>
-            </div>
-
+            </div> 
+            {{-- goi met furkan --}}
             <div class="inputbox">
                 <h1 class="titles">Tags</h1>
            
