@@ -27,4 +27,9 @@ class ListingController extends Controller
             'tests' => $tags
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.articleadd');
+    }
 }

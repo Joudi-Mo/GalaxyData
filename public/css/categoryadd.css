@@ -1,0 +1,48 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    background-color: #fffeff;
+    border-radius: 30px;
+    padding: 10px 15px;
+    width: 50vh;
+    justify-content: space-between;
+    margin: 20px;
+}
+input {
+    height: 100%;
+    width: 95%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #fffeff;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-family: "Poppins", sans-serif;
+}
+.table-container {
+    font-family: "Poppins", sans-serif;
+}
+.yes {
+    padding: 2px 30px;
+    background-color: rgba(0, 231, 131, 1);
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #242b36;
+    font-weight: 500;
+}

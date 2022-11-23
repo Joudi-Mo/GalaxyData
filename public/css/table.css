@@ -101,3 +101,15 @@ tr:nth-child(odd) {
 i {
     color: black;
 }
+
+.yes:hover {
+    background-color: rgba(0, 231, 131, 0.5);
+    /* background-color: rgba(36, 43, 54); */
+    /* color: #f5f5f5;
+    border: 1px solid #f5f5f5; */
+}
+.tablebutton {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}

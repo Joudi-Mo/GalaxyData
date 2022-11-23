@@ -32,9 +32,13 @@ Route::get('/login', function () {
 
 
 //show register form
-Route::get('/register', [UserController::class, 'create']); 
+Route::get('/register', [UserController::class, 'create']);
 
 //create new user
 Route::get('/users', [UserController::class, 'index']);
 
 Route::get('/category', [CategoryController::class, 'index']);
+
+Route::get('/categoryadd', [CategoryController::class, 'create']);
+
+Route::get('/articleadd', [ListingController::class, 'create']);
