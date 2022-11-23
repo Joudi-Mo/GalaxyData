@@ -21,6 +21,32 @@ input {
     transition: all 0.3s ease;
     font-family: "Poppins", sans-serif;
 }
+textarea {
+    height: 100%;
+    width: 95%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #fffeff;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+select {
+    height: 100%;
+    width: 95%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #fffeff;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
 .titles {
     color: white;
     display: flex;

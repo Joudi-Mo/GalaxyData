@@ -20,6 +20,6 @@ class ListingController extends Controller
 
     public function create()
     {
-        return view('admin.articleadd');
+        return view('users.articleadd');
     }
 }
