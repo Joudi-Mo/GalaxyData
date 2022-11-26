@@ -14,12 +14,12 @@ class ListingController extends Controller
         $tags = Tag::inRandomOrder()->limit(3)->get();
 
         $listings = Article::all();
-        if ($request->has('tag') ) {
-            $tag = Tag::where('tag', $request->tag)->first() ; //first opzoeken 
-            if(!is_null($tag)){
+        if ($request->has('tag')) {
+            $tag = Tag::where('tag', $request->tag)->first() ; //first opzoeken
+            if (!is_null($tag)) {
                 $listings = $tag->articles;
             }
-        } 
+        }
 
         return view('home', [
             'listings' => $listings,
