@@ -27,7 +27,11 @@
             
                   <div class="search">
                     <input name="title" type="text" value="" placeholder="Add a title..">
+                    
                   </div>
+                  @error('title')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                  @enderror
               </div>
 
               <div class="inputbox">
@@ -35,7 +39,11 @@
             
                   <div class="search">  
                     <textarea name="body" cols="60" rows="10" placeholder="Add content.."></textarea>
+                    
                   </div>
+                  @error('body')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                  @enderror
               </div>
 
               <div class="inputbox">
@@ -48,7 +56,11 @@
                         <option value={{$category->id}}>{{$category->category}}</option>
                        
                       @endforeach
+                      
                     </select>
+                    {{-- @error('category')
+                        <p>{{$message}}</p>
+                    @enderror --}}
                   </div>
               </div> 
               {{-- goi met furkan --}}
