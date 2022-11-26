@@ -41,4 +41,10 @@ Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
 
-Route::get('/articleadd', [ListingController::class, 'create']);
+
+
+//show article add form 
+Route::get('/articleaddpage', [ListingController::class, 'create']);
+
+// store article 
+Route::post('/articleadd', [ListingController::class, 'store']);

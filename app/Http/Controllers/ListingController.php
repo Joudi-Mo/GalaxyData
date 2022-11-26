@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +15,7 @@ class ListingController extends Controller
         $tags = Tag::inRandomOrder()->limit(3)->get();
 
         $listings = Article::all();
+        $categories = Category::all();
         if ($request->has('tag')) {
             $tag = Tag::where('tag', $request->tag)->first() ; //first opzoeken
             if (!is_null($tag)) {
@@ -30,6 +32,15 @@ class ListingController extends Controller
 
     public function create()
     {
-        return view('users.articleadd');
+        $categories = Category::all();
+
+        return view('users.articleadd', [
+            'categories' => $categories,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }
