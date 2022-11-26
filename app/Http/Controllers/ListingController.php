@@ -48,6 +48,8 @@ class ListingController extends Controller
             
         ]);
 
+        Article::create($formFields);
+
         return redirect('/')->with('message', 'Listing created successfully!');
     }
 }
