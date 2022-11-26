@@ -68,6 +68,11 @@ body {
     background-color: #24354d;
     font-family: "Poppins", sans-serif;
 }
+.alleswrapper {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
 .articleadd {
     display: flex;
     flex-direction: row;

@@ -6,6 +6,7 @@ use App\Models\Tag;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
@@ -41,6 +42,12 @@ class ListingController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        $formFields = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            
+        ]);
+
+        return redirect('/')->with('message', 'Listing created successfully!');
     }
 }

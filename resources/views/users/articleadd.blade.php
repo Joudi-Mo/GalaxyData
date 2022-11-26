@@ -13,6 +13,8 @@
 </head>
 
 <body>
+  <div class="alleswrapper">
+
     @include('header')
 
     <form method="POST" action="/articleadd">
@@ -73,6 +75,10 @@
 
 
     @include('footer')
+
+
+  </div>
+   
 </body>
 
 </html>
