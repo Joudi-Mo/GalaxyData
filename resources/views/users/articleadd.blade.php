@@ -58,9 +58,9 @@
                       @endforeach
                       
                     </select>
-                    {{-- @error('category')
-                        <p>{{$message}}</p>
-                    @enderror --}}
+                    @error('category')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                    @enderror
                   </div>
               </div> 
               {{-- goi met furkan --}}
