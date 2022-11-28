@@ -24,7 +24,7 @@ class UserController extends Controller
 
         ]);
 
-        //encrypt password 
+        //encrypt password
         // $formFields['password'] = bcrypt($formFields['password']);
         // create user
         $user = User::create($formFields);

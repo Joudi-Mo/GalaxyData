@@ -18,9 +18,9 @@
            @csrf
             <div class="input-box">
                 <label for="username">Username</label>
-                <input name="username" value="{{old('username')}}" type="text" placeholder="Enter your username">
+                <input name="name" value="{{old('name')}}" type="text" placeholder="Enter your username">
 
-                @error('username') 
+                @error('name') 
                     <p style="color: red;padding-bottom:5px">{{$message}}</p>
                 @enderror
             </div>
