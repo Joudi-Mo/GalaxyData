@@ -48,3 +48,6 @@ Route::get('/articleaddpage', [ListingController::class, 'create']);
 
 // store article 
 Route::post('/articleadd', [ListingController::class, 'store']);
+
+
+Route::get('/logout', [UserController::class, 'logout']);

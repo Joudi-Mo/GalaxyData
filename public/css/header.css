@@ -108,3 +108,47 @@ a {
     border: none;
     color: #242b36; */
 }
+
+.afterloginlinks button {
+    padding: 2px 20px;
+    background-color: rgba(0, 231, 131, 0);
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00e783;
+}
+
+.afterloginlinks button:hover {
+    color: rgba(0, 231, 131, 0.5);
+    /* background-color: rgba(36, 43, 54); */
+    /* color: #f5f5f5;
+    border: 1px solid #f5f5f5; */
+}
+
+.afterloginrechts button {
+    padding: 2px 25px;
+    background-color: rgba(36, 43, 54, 1);
+    border: 2px solid rgba(245, 245, 245, 1);
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4f4f4;
+}
+.afterloginrechts button:hover {
+    background-color: rgba(36, 43, 54, 0.1);
+    border: 2px solid rgba(245, 245, 245, 0.5);
+    color: rgba(245, 245, 245, 0.5);
+    /* background-color: #00e783;
+    border-color: #f5f5f5;
+    border: none;
+    color: #242b36; */
+}
