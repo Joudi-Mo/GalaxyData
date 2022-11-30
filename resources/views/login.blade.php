@@ -16,7 +16,7 @@
     <div class="wrapper">
         <h2>Sign In</h2>
         <form action="/loginauth" method="POST">
-           
+           @csrf
             <div class="input-box">
                 <input name="email" type="email" value="{{old('email')}}" placeholder="Enter your email">
             </div>

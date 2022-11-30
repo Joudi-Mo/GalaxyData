@@ -35,7 +35,7 @@ Route::get('/register', [UserController::class, 'create']);
 //create new user
 Route::post('/users', [UserController::class, 'store']);
 
-Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category', [CategoryController::class, 'index'])->middleware('role:admin');
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
 
@@ -51,7 +51,7 @@ Route::post('/articleadd', [ListingController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 //show login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 //show auth login form
 Route::post('/loginauth', [UserController::class, 'auth']);
