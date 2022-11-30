@@ -11,20 +11,18 @@ class ListingController extends Controller
 {
     public function index(Request $request)
     {
-        $tags = Tag::inRandomOrder()->limit(3)->get();
-
         $listings = Article::all();
-        if ($request->has('tag') ) {
-            $tag = Tag::where('tag', $request->tag)->first() ; //first opzoeken 
-            if(!is_null($tag)){
-                $listings = $tag->articles;
-            }
+        if ($request->has('tag')) {
+            $listings = Tag::where('tag', $request->tag)->first()->articles ?? Article::all(); //first opzoeken 
         } 
+        
+        if($request->has('search')) {
+            $listings = Article::where('title', $request->search)->get() ?? Article::all();
+        }
 
         return view('home', [
             'listings' => $listings,
-            // 'listings' => Article::all(),
-            'tests' => $tags
+            'tests' => Tag::inRandomOrder()->limit(3)->get()
         ]);
     }
 

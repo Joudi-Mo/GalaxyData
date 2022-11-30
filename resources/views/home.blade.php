@@ -17,12 +17,16 @@
     <div class="home">
         <div class="search-box">
             <div class="searchbar">
-                <div class="search">
-                    <input type="text" value="" placeholder="Search words..">
-                    <div class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                <form action="/">
+                    <div class="search">
+
+                        <input type="text" name="search" value="" placeholder="Search words..">
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
                     </div>
-                </div>
+                </form>
                 <div class="tags">
                     @foreach ($tests as $test)
                     <div class="tag">
