@@ -26,9 +26,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+
 
 
 //show register form
@@ -43,11 +41,17 @@ Route::get('/categoryadd', [CategoryController::class, 'create']);
 
 
 
-//show article add form 
+//show article add form
 Route::get('/articleaddpage', [ListingController::class, 'create']);
 
-// store article 
+// store article
 Route::post('/articleadd', [ListingController::class, 'store']);
 
 
-Route::get('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout']);
+
+//show login form
+Route::get('/login', [UserController::class, 'login']);
+
+//show auth login form
+Route::post('/loginauth', [UserController::class, 'auth']);

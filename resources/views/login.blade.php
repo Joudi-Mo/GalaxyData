@@ -15,13 +15,13 @@
 <body id="body">
     <div class="wrapper">
         <h2>Sign In</h2>
-        <form action="login.php" method="POST">
+        <form action="/loginauth" method="POST">
            
             <div class="input-box">
-                <input name="email" type="email" placeholder="Enter your email">
+                <input name="email" type="email" value="{{old('email')}}" placeholder="Enter your email">
             </div>
             <div class="input-box">
-                <input name="password" type="password" placeholder="Enter your password">
+                <input name="password" type="password" value="{{old('password')}}" placeholder="Enter your password">
             </div>
 
             <div class="input-box button">

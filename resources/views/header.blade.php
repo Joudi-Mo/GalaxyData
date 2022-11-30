@@ -23,9 +23,13 @@
     @auth
        
         <a class="afterloginlinks" href="/register"><button>My articles</button></a>
-        <a class="afterloginrechts" href="/logout">
-            <button type="submit">Log out</button>
-        </a>
+        <form action="/logout" method="POST">
+         @csrf  
+            <a class="afterloginrechts">
+                <button type="submit">Log out</button>
+            </a>
+        </form>
+        
     @else
    
         <a class="atc" href="/login"><button>Log in</button></a>
