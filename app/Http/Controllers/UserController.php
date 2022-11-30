@@ -24,7 +24,7 @@ class UserController extends Controller
 
         ]);
 
-        //encrypt password yahurd
+        //encrypt password
         $formFields['password'] = bcrypt($formFields['password']);
         // create user
         $user = User::create($formFields);
@@ -40,5 +40,13 @@ class UserController extends Controller
         return view('admin.useroverview', [
             'users' => User::all()
         ]);
+    }
+
+    public function logout(Request $request){
+
+        auth()->logout();
+
+        return redirect('/')->with('message', 'User logged out');
+
     }
 }

@@ -35,10 +35,19 @@ Route::get('/login', function () {
 Route::get('/register', [UserController::class, 'create']);
 
 //create new user
-Route::get('/users', [UserController::class, 'index']);
+Route::post('/users', [UserController::class, 'store']);
 
 Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
 
-Route::get('/articleadd', [ListingController::class, 'create']);
+
+
+//show article add form 
+Route::get('/articleaddpage', [ListingController::class, 'create']);
+
+// store article 
+Route::post('/articleadd', [ListingController::class, 'store']);
+
+
+Route::get('/logout', [UserController::class, 'logout']);

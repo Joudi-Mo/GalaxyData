@@ -18,35 +18,35 @@
            @csrf
             <div class="input-box">
                 <label for="username">Username</label>
-                <input name="username" value={{old('username')}} type="text" placeholder="Enter your username">
+                <input name="name" value="{{old('name')}}" type="text" placeholder="Enter your username">
 
-                @error('username') 
-                    <p>{{$message}} </p>
+                @error('name') 
+                    <p style="color: red;padding-bottom:5px">{{$message}}</p>
                 @enderror
             </div>
             <div class="input-box">
                 <label for="username">Email</label>
-                <input name="email" type="email" value={{old('email')}} placeholder="Enter your email">
+                <input name="email" type="email" value="{{old('email')}}" placeholder="Enter your email">
 
                 @error('email') 
-                    <p>{{$message}} </p>
+                 <p style="color: red;padding-bottom:5px">{{$message}}</p>
                 @enderror
             </div>
             <div class="input-box">
                 <label for="username">Password</label>
-                <input name="password" type="password" value={{old('password')}} placeholder="Enter your password">
+                <input name="password" type="password" value="{{old('password')}}" placeholder="Enter your password">
 
                 @error('password') 
-                    <p>{{$message}} </p>
+                 <p style="color: red;padding-bottom:5px">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="input-box">
                 <label for="username">Confirm Password</label>
-                <input name="password_confirmation" type="password" value={{old('password_confirmation  ')}} placeholder="Enter your password">
+                <input name="password_confirmation" type="password" value="{{old('password_confirmation')}}" placeholder="Enter your password">
 
                 @error('password_confirmation') 
-                    <p>{{$message}} </p>
+                  <p style="color: red;padding-bottom:5px">{{$message}}</p>
                 @enderror
             </div>
 

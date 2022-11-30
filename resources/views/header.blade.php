@@ -13,15 +13,24 @@
 <nav> 
     
     <ul class="nav__links">
-        <li><a href="/about">About</a></li>
+        <li><a href="/login">Create article</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="/about">Contact</a></li>
     </ul>
    
 </nav>
 <div class="buttons">
-    <a class="atc" href="/login"><button>Log in</button></a>
-    <a class="cta" href="/register"><button>Sign Up</button></a>
+    @auth
+       
+        <a class="afterloginlinks" href="/register"><button>My articles</button></a>
+        <a class="afterloginrechts" href="/logout">
+            <button type="submit">Log out</button>
+        </a>
+    @else
+   
+        <a class="atc" href="/login"><button>Log in</button></a>
+        <a class="cta" href="/register"><button>Sign Up</button></a>
+    @endauth
 </div>
     
 </header>

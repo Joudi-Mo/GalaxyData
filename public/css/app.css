@@ -9,5 +9,9 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+
+    background-color: #24354d;
+}
+html {
+    height: 100%;
 }

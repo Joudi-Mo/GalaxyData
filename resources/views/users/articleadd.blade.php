@@ -13,61 +13,84 @@
 </head>
 
 <body>
+  <div class="alleswrapper">
+
     @include('header')
-    <div class="articleadd">
-        <div class="table-container">
-       
-            <div class="inputbox">
-                <h1 class="titles">Title</h1>
-           
-                <div class="search">
-                  <input type="text" value="" placeholder="Add a title..">
-                </div>
-            </div>
 
-            <div class="inputbox">
-                <h1 class="titles">Content</h1>
-           
-                <div class="search">  
-                  <textarea name="paragraph_text" cols="60" rows="10" placeholder="Add content.."></textarea>
-                </div>
-            </div>
-
-            <div class="inputbox">
-                <h1 class="titles">Category</h1>
-           
-                <div class="search">
-                  <select name="category" id="cars" placeholder="Add content..">
-                    <option value="" disabled selected hidden>Add a category..</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                </div>
-            </div> 
-            <div class="inputbox">
-                <h1 class="titles">Tags</h1>
-           
-                <div class="search">
-                  <input type="text" value="" placeholder="Add tags..">
-                </div>
-            </div>  
-          
-         
-    
-          
-        </div>
-        <div class="tablebutton">
-            <a class="" href="admin.categoryadd"><button class="yes">Add</button></a>
-         </div>
+    <form method="POST" action="/articleadd">
+      @csrf
+      <div class="articleadd">
+          <div class="table-container">
         
-    </div>
+              <div class="inputbox">
+                  <h1 class="titles">Title</h1>
+            
+                  <div class="search">
+                    <input name="title" type="text" value="" placeholder="Add a title..">
+                    
+                  </div>
+                  @error('title')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                  @enderror
+              </div>
+
+              <div class="inputbox">
+                  <h1 class="titles">Content</h1>
+            
+                  <div class="search">  
+                    <textarea name="body" cols="60" rows="10" placeholder="Add content.."></textarea>
+                    
+                  </div>
+                  @error('body')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                  @enderror
+              </div>
+
+              <div class="inputbox">
+                  <h1 class="titles">Category</h1>
+            
+                  <div class="search">
+                    <select name="category" id="cars" placeholder="Add content..">
+                      <option value="" disabled selected hidden>Add a category..</option>
+                      @foreach($categories as $category)
+                        <option value={{$category->id}}>{{$category->category}}</option>
+                       
+                      @endforeach
+                      
+                    </select>
+                    @error('category')
+                      <p style="color: red;padding-bottom:5px">{{$message}}</p>
+                    @enderror
+                  </div>
+              </div> 
+              {{-- goi met furkan --}}
+              <div class="inputbox">
+                  <h1 class="titles">Tags</h1>
+            
+                  <div class="search">
+                    <input type="text" value="" placeholder="Add tags..">
+                  </div>
+              </div>  
+            
+          
+      
+            
+          </div>
+          <div class="tablebutton">
+              <a class="" href="admin.categoryadd"><button class="yes">Add</button></a>
+          </div>
+          
+      </div>
+    </form>
 
    
 
 
     @include('footer')
+
+
+  </div>
+   
 </body>
 
 </html>
