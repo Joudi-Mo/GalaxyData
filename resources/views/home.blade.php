@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <title>Home || GalaxyData</title>
 </head>
 
 <body>
 
     <div class="mainwrapper">
-
 
         @include('header')
 
@@ -55,15 +54,6 @@
                                 </div>
                                 @endforeach
 
-                                {{-- <div class="artikeltag">
-                                    Tag 1
-                                </div>
-                                <div class="artikeltag">
-                                    Tag 2
-                                </div>
-                                <div class="artikeltag">
-                                    Tag 3
-                                </div> --}}
                             </div>
                         </div>
                         <div class="content">
@@ -104,7 +94,6 @@
 
 
                 @include('footer')
-
 </body>
 
 </html>

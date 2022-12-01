@@ -5,28 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Tag;
 use App\Models\Article;
 use App\Models\Category;
+use App\Services\SearchService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, SearchService $service)
     {
-        // $categories = Category::all();
-        $listings = Article::all();
+        if ($request->has('search')) {
+            $listings = $service->search($request->search);
+        }
+        
         if ($request->has('tag')) {
             // Hieronder wordt het eerste gedeelte gecheckt of het niet null is(Tag::where ...), niet? dan gaat de listings met alle article vullen
             $listings = Tag::where('tag', $request->tag)->first()->articles ?? Article::all(); //first opzoeken 
         } 
-        
-        if($request->has('search')) {
-            // Hieronder wordt het eerste gedeelte gecheckt of het niet null is(Article::where...), niet? dan gaat de listings met alle article vullen
-            $listings = Article::where('title', $request->search)->get() ?? Article::all();
-        }
-
         return view('home', [
-            'listings' => $listings,
+            'listings' => $listings ?? Article::all(),
             'tests' => Tag::inRandomOrder()->limit(3)->get() //Stuur drie random tags
         ]);
     }
