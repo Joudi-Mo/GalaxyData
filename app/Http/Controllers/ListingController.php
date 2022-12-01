@@ -17,7 +17,6 @@ class ListingController extends Controller
         if ($request->has('search')) {
             $listings = $service->search($request->search);
         }
-
         return view('home', [
             'listings' => $listings ?? Article::all(),
             'tests' => Tag::inRandomOrder()->limit(3)->get() //Stuur drie random tags
