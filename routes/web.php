@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\CategoryController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 //create new user
 Route::post('/users', [UserController::class, 'store']);
 
-Route::get('/category', [CategoryController::class, 'index'])->middleware('role:admin');
+
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
 
@@ -55,3 +56,15 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 //show auth login form
 Route::post('/loginauth', [UserController::class, 'auth']);
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => 'admin',
+    ], function(){
+        Route::get('/category', [CategoryController::class, 'index']);
+    });
+
+
+    
+});
