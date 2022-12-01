@@ -10,7 +10,6 @@ class SearchService
 
     public function search($searchString)
     {
-
         if (Article::where('title', $searchString)->get()->isNotEmpty()) {
             return Article::where('title', $searchString)->get();
         }

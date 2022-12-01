@@ -17,6 +17,11 @@ class ListingController extends Controller
         if ($request->has('search')) {
             $listings = $service->search($request->search);
         }
+        
+        if ($request->has('tag')) {
+            // Hieronder wordt het eerste gedeelte gecheckt of het niet null is(Tag::where ...), niet? dan gaat de listings met alle article vullen
+            $listings = Tag::where('tag', $request->tag)->first()->articles ?? Article::all(); //first opzoeken 
+        } 
         return view('home', [
             'listings' => $listings ?? Article::all(),
             'tests' => Tag::inRandomOrder()->limit(3)->get() //Stuur drie random tags
