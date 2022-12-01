@@ -50,7 +50,7 @@
                   <h1 class="titles">Category</h1>
             
                   <div class="search">
-                    <select name="category" id="cars" placeholder="Add content..">
+                    <select name="category_id" id="cars" placeholder="Add content..">
                       <option value="" disabled selected hidden>Add a category..</option>
                       @foreach($categories as $category)
                         <option value={{$category->id}}>{{$category->category}}</option>
