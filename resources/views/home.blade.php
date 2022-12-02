@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
-    <title>Home || GalaxyData</title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -23,11 +23,13 @@
                     <form action="/">
                         <div class="search">
 
-                            <input type="text" name="search" value="" placeholder="Search words..">
-                            <div class="search-icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
+                            <input type="text" name="search" id="zoekbar" placeholder="Search words..">
+
+                            <button class="search-button">
+                                <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
+                        {{-- <span>Ctrl + /</span> --}}
                     </form>
                     <div class="tags">
                         @foreach ($tests as $test)
@@ -40,60 +42,60 @@
 
             </div>
 
-                <div class="artikels">
-                    @unless(count($listings) == 0)
-                    @foreach($listings as $listing)
-                    <div class="artikel">
-                        <div class="bovenkant">
-                            <div class="title">{{$listing->title}}</div>
-                            <div class="artikeltags">
+            <div class="artikels">
+                @unless(count($listings) == 0)
+                @foreach($listings as $listing)
+                <div class="artikel">
+                    <div class="bovenkant">
+                        <div class="title">{{$listing->title}}</div>
+                        <div class="artikeltags">
 
-                                @foreach ($listing->tags as $tag)
+                            @foreach ($listing->tags as $tag)
+                            <div class="artikeltag">
+                                {{ $tag->tag}}
+                            </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>{{$listing->body}}
+                        </p>
+                    </div>
+                    <div class="onderkant">
+                        <div class="onderkantlinks">
+                            <div class="username">
+                                {{ $listing->user->name }}
+                            </div>
+                            {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
+                            <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div>
+
+                        </div>
+                        <div class="onderkantrechts">
+                            <div class="tags">
                                 <div class="artikeltag">
-                                    {{ $tag->tag}}
+                                    <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
                                 </div>
-                                @endforeach
-
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>{{$listing->body}}
-                            </p>
-                        </div>
-                        <div class="onderkant">
-                            <div class="onderkantlinks">
-                                <div class="username">
-                                    {{ $listing->user->name }}
-                                </div>
-                                {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
-                                <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div>
-
-                            </div>
-                            <div class="onderkantrechts">
-                                <div class="tags">
-                                    <div class="artikeltag">
-                                        <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
-                                    </div>
-                                    <div class="artikeltag">
-                                        <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
-                                    </div>
+                                <div class="artikeltag">
+                                    <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
                                 </div>
                             </div>
-
-
                         </div>
 
 
                     </div>
-                    @endforeach
-                    @else
-                    <p>no words found be the first one to make it</p>
-                    @endunless
+
+
                 </div>
+                @endforeach
+                @else
+                <p>no words found be the first one to make it</p>
+                @endunless
+            </div>
 
+            <script src="js/script.js"></script>
 
-
-                @include('footer')
+            @include('footer')
 </body>
 
 </html>
