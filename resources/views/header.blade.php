@@ -13,7 +13,7 @@
 <nav> 
     
     <ul class="nav__links">
-        <li><a href="/login">Create article</a></li>
+        <li><a href="/articleaddpage">Create article</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="/about">Contact</a></li>
     </ul>
@@ -22,7 +22,7 @@
 <div class="buttons">
     @auth
        
-        <a class="afterloginlinks" href="/register"><button>My articles</button></a>
+        <a class="afterloginlinks" href="/"><button>My articles</button></a>
         <form action="/logout" method="POST">
          @csrf  
             <a class="afterloginrechts">

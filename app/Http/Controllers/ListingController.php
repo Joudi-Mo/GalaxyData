@@ -40,9 +40,14 @@ class ListingController extends Controller
         $formFields = $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'category' => 'required',
-
+            'category_id' => 'required',
+            
         ]);
+
+        $formFields['user_id'] = auth()->id();  
+        $formFields['is_populair'] = '0';     
+        $formFields['likes'] = '0';
+        $formFields['dislikes'] = '0';  
 
         Article::create($formFields);
 

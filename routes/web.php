@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\CategoryController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,19 +31,19 @@ Route::get('/about', function () {
 
 
 //show register form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 //create new user
 Route::post('/users', [UserController::class, 'store']);
 
-Route::get('/category', [CategoryController::class, 'index'])->middleware('role:admin');
+
 
 Route::get('/categoryadd', [CategoryController::class, 'create']);
 
 
 
 //show article add form
-Route::get('/articleaddpage', [ListingController::class, 'create']);
+Route::get('/articleaddpage', [ListingController::class, 'create'])->middleware('auth');
 
 // store article
 Route::post('/articleadd', [ListingController::class, 'store']);
@@ -51,7 +52,19 @@ Route::post('/articleadd', [ListingController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 //show login form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 //show auth login form
 Route::post('/loginauth', [UserController::class, 'auth']);
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => 'admin',
+    ], function(){
+        Route::get('/category', [CategoryController::class, 'index']);
+    });
+
+
+    
+});
