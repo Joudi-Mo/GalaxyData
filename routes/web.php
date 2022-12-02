@@ -57,14 +57,11 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 //show auth login form
 Route::post('/loginauth', [UserController::class, 'auth']);
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::group([
         'prefix' => 'admin',
         'middleware' => 'admin',
-    ], function(){
+    ], function () {
         Route::get('/category', [CategoryController::class, 'index']);
     });
-
-
-    
 });
