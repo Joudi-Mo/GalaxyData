@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/about.css">
-    <title>About || GalaxyData</title>
+    <title>About</title>
 </head>
 
 <body>

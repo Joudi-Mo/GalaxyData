@@ -25,6 +25,23 @@
     padding: 20px 30px;
     width: 50vh;
     justify-content: space-between;
+    border: 2px solid #fffeff;
+}
+.search-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+}
+
+#search-icon{
+    color: #24354d;
+    transition: all 0.3s ease ;
+
+}
+#search-icon:hover{
+    color: #00e783;
+    transform: scale(1.5);
 }
 .search-box {
     background-color: #a9e1c9;
@@ -59,8 +76,8 @@ input {
     color: white;
     background-color: #242b36;
     border-radius: 20px;
-
-    padding: 3px 7px 3px 7px;
+    /* padding: 3px 7px 3px 7px; */
+    padding: 8px 12px;
     display: flex;
     justify-content: center;
     align-items: center;

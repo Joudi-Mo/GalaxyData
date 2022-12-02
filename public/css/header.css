@@ -13,6 +13,9 @@ button {
     color: white;
     text-decoration: none;
 }
+a{
+    font-weight: normal;
+}
 header {
     display: flex;
     justify-content: space-between;

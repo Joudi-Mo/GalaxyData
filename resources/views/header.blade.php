@@ -6,9 +6,9 @@
 
     
 <header> 
-    <div class="logo">
+    <a href="/" class="logo">
         <h1>Galaxy</h1><h1 class="secondletter">Data</h1>
-    </div>
+    </a>
     
 <nav> 
     
