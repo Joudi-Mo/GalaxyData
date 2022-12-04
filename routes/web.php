@@ -38,7 +38,7 @@ Route::post('/users', [UserController::class, 'store']);
 
 
 
-Route::get('/categoryadd', [CategoryController::class, 'create']);
+
 
 
 
@@ -49,7 +49,7 @@ Route::get('/articleaddpage', [ListingController::class, 'create'])->middleware(
 Route::post('/articleadd', [ListingController::class, 'store']);
 
 
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 //show login form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
@@ -63,5 +63,16 @@ Route::group(['middleware' => 'auth'], function () {
         'middleware' => 'admin',
     ], function () {
         Route::get('/category', [CategoryController::class, 'index']);
+
+
+        
+        Route::get('/users', [UserController::class, 'index']);
+
+
+        Route::get('/categoryadd', [CategoryController::class, 'create']);
+
+        Route::post('/categoryaddverwerk', [CategoryController::class, 'store']);
+
+
     });
 });

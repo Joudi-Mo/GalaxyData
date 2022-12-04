@@ -18,4 +18,18 @@ class CategoryController extends Controller
     {
         return view('admin.categoryadd');
     }
+
+    public function store(Request $request){
+        $formFields = $request->validate([
+            'category' => 'required',
+           
+            
+        ]);
+
+       
+
+        Category::create($formFields);
+
+        return redirect('/category')->with('message', 'Category created successfully!');
+    }
 }
