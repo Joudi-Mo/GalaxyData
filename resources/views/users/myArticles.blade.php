@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/myarticles.css">
-    {{-- <link rel="stylesheet" href="css/home.css"> --}}
+    {{--
+    <link rel="stylesheet" href="css/home.css"> --}}
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>My articles</title>
 </head>
@@ -15,14 +16,16 @@
 <body>
     @include('header')
 
+    <a href="" id="deleteknop">Delete all articles</a>
     <div class="artikels">
+
+
         @unless(count($listings) == 0)
         @foreach($listings as $listing)
         <div class="artikel">
             <div class="bovenkant">
                 <div class="title">{{$listing->title}}</div>
                 <div class="artikeltags">
-
                     @foreach ($listing->tags as $tag)
                     <div class="artikeltag">
                         {{ $tag->tag}}
@@ -45,7 +48,9 @@
 
                 </div>
                 <div class="onderkantrechts">
-                    <div class="tags">
+                    <div class="tags">                        
+                        <a href="" id="delete-icon"><i class="fa-solid fa-trash"></i></a>
+
                         <div class="artikeltag">
                             <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
                         </div>
@@ -68,7 +73,7 @@
 
 
 
-    @include('footer')
+    {{-- @include('footer') --}}
 </body>
 
 </html>
