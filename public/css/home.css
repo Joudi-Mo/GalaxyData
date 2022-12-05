@@ -28,6 +28,8 @@
     border: 2px solid #fffeff;
 }
 .search.active {
+    border: 2px solid #00e783;
+
 }
 .search-button{
     background: none;
