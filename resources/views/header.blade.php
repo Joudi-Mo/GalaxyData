@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet"  href="css/header.css">
+   <link rel="stylesheet"  href="{{asset('css/header.css')}}">
 </head>
 
     
@@ -16,6 +16,24 @@
         <li><a href="/articleaddpage">Create article</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="/about">Contact</a></li>
+       
+
+         @auth
+                @if (auth()->user()->is_admin)
+                    <li><a href="/admin/category">Category overview</a></li>
+                    <li><a href="/admin/users">User overview</a></li>
+
+                @else
+
+                     <input type="hidden">
+                @endif
+
+         @endauth                                                                                                                            
+
+
+
+
+        
     </ul>
    
 </nav>
