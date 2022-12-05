@@ -63,8 +63,10 @@ Route::group(['middleware' => 'auth'], function(){
         'middleware' => 'admin',
     ], function(){
         Route::get('/category', [CategoryController::class, 'index']);
-    });
-
-
-    
+    });    
 });
+
+Route::get('/myarticles', function () {
+    return view('users/myarticles');
+});
+Route::get('/myarticles', [UserController::class, 'showArticles']);

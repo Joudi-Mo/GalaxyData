@@ -21,7 +21,7 @@
             <div class="search-box">
                 <div class="searchbar">
                     <form action="/">
-                        <div class="search">
+                        <div class="search" id="search">
 
                             <input type="text" name="search" id="zoekbar" placeholder="Search words..">
 
@@ -29,6 +29,7 @@
                                 <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>
+
                         {{-- <span>Ctrl + /</span> --}}
                     </form>
                     <div class="tags">

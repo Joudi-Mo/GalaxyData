@@ -22,7 +22,7 @@
 <div class="buttons">
     @auth
        
-        <a class="afterloginlinks" href="/"><button>My articles</button></a>
+        <a class="afterloginlinks" href="/myarticles"><button>My articles</button></a>
         <form action="/logout" method="POST">
          @csrf  
             <a class="afterloginrechts">
