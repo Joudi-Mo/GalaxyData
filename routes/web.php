@@ -69,4 +69,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-Route::get('/myarticles', [UserController::class, 'showArticles']);
+Route::get('/myarticles', [UserController::class, 'showArticles'])->middleware('auth');
