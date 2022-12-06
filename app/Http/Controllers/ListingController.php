@@ -7,8 +7,6 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Services\SearchService;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
 {
@@ -50,7 +48,13 @@ class ListingController extends Controller
         $formFields['dislikes'] = '0';  
 
         Article::create($formFields);
-
         return redirect('/')->with('message', 'Listing created successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $listing = Article::findOrFail($id);
+        $listing->delete();
+        return redirect('/myarticles')->with('message', 'Article deleted succesfully');
     }
 }

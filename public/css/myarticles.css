@@ -116,9 +116,19 @@
     /* padding: 0px; */
     color: red;
     transition: all 0.4s ease;
+    border: none;
+    outline: none;
 }
 #delete-icon:hover{
     transform: scale(1.3);
     opacity: .8;
     color: rgb(161, 15, 15);
+}
+#delete-button{
+    color: red;
+    /* padding: 0 10px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+
 }

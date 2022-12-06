@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/myarticles.css">
-    {{--
-    <link rel="stylesheet" href="css/home.css"> --}}
+    {{--<link rel="stylesheet" href="css/home.css"> --}}
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>My articles</title>
 </head>
@@ -43,14 +42,16 @@
                     <div class="username">
                         {{ $listing->user->name }}
                     </div>
-                    {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
                     <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div>
 
                 </div>
                 <div class="onderkantrechts">
-                    <div class="tags">                        
-                        <a href="" id="delete-icon"><i class="fa-solid fa-trash"></i></a>
-
+                    <div class="tags">
+                        <form action="/listing/{{ $listing->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button id="delete-button"><i class="fa-solid fa-trash" id="delete-icon"></i></button>
+                        </form>
                         <div class="artikeltag">
                             <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
                         </div>
@@ -71,9 +72,6 @@
         @endunless
     </div>
 
-
-
-    {{-- @include('footer') --}}
 </body>
 
 </html>
