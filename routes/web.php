@@ -41,6 +41,9 @@ Route::get('/articleaddpage', [ListingController::class, 'create'])->middleware(
 // store article
 Route::post('/articleadd', [ListingController::class, 'store']);
 
+// delete single user in admin panel
+Route::delete('/user/{id}', [ListingController::class, 'destroyUser']);
+
 // delete single article
 Route::delete('/listing/{id}', [ListingController::class, 'destroy']);
 

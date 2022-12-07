@@ -23,12 +23,10 @@
 
     @endif
 
-    {{-- {{dd($userID)}} --}}
     <form action="/listings/" method="POST">
         @csrf
         @method('DELETE')
         <button id="deleteknop">Delete all articles</i></button>
-        {{-- <a href="" id="deleteknop">Delete all articles</a> --}}
     </form>
     <div class="artikels">
 

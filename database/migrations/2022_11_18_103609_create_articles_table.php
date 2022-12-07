@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('set null');;
             $table->foreignId('category_id')->references('id')->on('categories');
             $table->string('title');
             $table->longText('body');

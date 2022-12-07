@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tag;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
 use App\Services\SearchService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,13 @@ class ListingController extends Controller
         return redirect('/')->with('message', 'Listing created successfully!');
     }
 
+    public function destroyUser($id)
+    {
+        $deletedUser = User::findOrFail($id);
+        $deletedUser->delete();
+        return redirect('/admin/users')->with('message', 'Article deleted succesfully');
+    }
+
     public function destroy($id)
     {
         $listing = Article::findOrFail($id);
@@ -68,4 +76,5 @@ class ListingController extends Controller
         }
         return redirect('/myarticles')->with('message', 'Article deleted succesfully');
     }
+
 }
