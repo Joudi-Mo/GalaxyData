@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/table.css')}}">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>Users</title>
@@ -17,8 +14,6 @@
 <body>
     @include('header')
     <div class="table-container">
-        
-       
         <table class="table">
             <thead>
                 <tr>
@@ -27,8 +22,6 @@
                     <th>email</th>
                     <th>created at</th>
                     <th></th>
-                    {{-- <th></th> --}}
-                   
                 </tr>
             </thead>
             <tbody>
@@ -39,18 +32,18 @@
                     <td data-label="firstname">{{$user->name}}</td>
                     <td data-label="lastname">{{$user->email}}</td>
                     <td data-label="email">{{ date('d-m-Y', strtotime($user->created_at)) }}</td>
-                   
-                    
-                    {{-- <td data-label="update"><a href="klanten-update.php?id={{$user->id}}"
-                            class="btn">update</a></td> --}}
-
-                    <td data-label="verwijder"><a href="php/klanten-delete-verwerk.php?id={{$user->id}}"
-                            class="btn"><i class="fa-solid fa-trash"></i></a>
+                    <td data-label="verwijder">
+                        <form action="/user/{{$user->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button id="deleteknop"><i class="fa-solid fa-trash"></i></i></button>
+                        </form>
                     </td>
+
                 </tr>
                 @endforeach
                 @else
-                <p>no words found be the first one to make it</p>
+                <p>no words found, be the first one to make it</p>
                 @endunless
             </tbody>
         </table>

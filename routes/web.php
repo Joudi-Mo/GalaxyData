@@ -27,9 +27,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-
-
-
 //show register form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
@@ -38,15 +35,20 @@ Route::post('/users', [UserController::class, 'store']);
 
 
 
-
-
-
-
 //show article add form
 Route::get('/articleaddpage', [ListingController::class, 'create'])->middleware('auth');
 
 // store article
 Route::post('/articleadd', [ListingController::class, 'store']);
+
+// delete single user in admin panel
+Route::delete('/user/{id}', [ListingController::class, 'destroyUser']);
+
+// delete single article
+Route::delete('/listing/{id}', [ListingController::class, 'destroy']);
+
+//delete all articles of one user
+Route::delete('/listings', [ListingController::class, 'destroyAll']);
 
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
@@ -68,9 +70,11 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/users', [UserController::class, 'index']);
 
-
         Route::get('/categoryadd', [CategoryController::class, 'create']);
 
         Route::post('/categoryaddverwerk', [CategoryController::class, 'store']);
     });
 });
+
+
+Route::get('/myarticles', [UserController::class, 'showArticles'])->middleware('auth');

@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Listing;
+use App\Models\Tag;
 use App\Models\User;
+use App\Services\SearchService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -72,4 +78,15 @@ class UserController extends Controller
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
+
+    public function showArticles()
+    {   
+        $ownListings = Article::all()->where('user_id', Auth::id());
+
+        return view('users/myarticles', [
+            'userID' => Auth::id(),
+            'listings' => $ownListings,
+        ]);
+    }
+
 }
