@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Listing;
 use App\Models\Tag;
 use App\Models\User;
 use App\Services\SearchService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -76,20 +79,13 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 
-    public function showArticles(Request $request, SearchService $service)
-    {
-        if ($request->has('search')) {
-            $listings = $service->search($request->search);
-        }
-        
-        if ($request->has('tag')) {
-            // Hieronder wordt het eerste gedeelte gecheckt of het niet null is(Tag::where ...), niet? dan gaat de listings met alle article vullen
-            $listings = Tag::where('tag', $request->tag)->first()->articles ?? Article::all(); //first opzoeken 
-        } 
+    public function showArticles()
+    {   
+        $ownListings = Article::all()->where('user_id', Auth::id());
 
         return view('users/myarticles', [
-            'listings' => $listings ?? Article::all(),
-            'tests' => Tag::inRandomOrder()->limit(3)->get() //Stuur drie random tags
+            'userID' => Auth::id(),
+            'listings' => $ownListings,
         ]);
     }
 

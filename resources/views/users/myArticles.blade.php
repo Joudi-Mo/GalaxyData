@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/myarticles.css">
-    {{--<link rel="stylesheet" href="css/home.css"> --}}
+    {{--
+    <link rel="stylesheet" href="css/home.css"> --}}
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>My articles</title>
 </head>
@@ -15,7 +16,20 @@
 <body>
     @include('header')
 
-    <a href="" id="deleteknop">Delete all articles</a>
+    @if (session('message'))
+    <div class="alert alert-succes">
+        {{session('message')}}
+    </div>
+
+    @endif
+
+    {{-- {{dd($userID)}} --}}
+    <form action="/listings/" method="POST">
+        @csrf
+        @method('DELETE')
+        <button id="deleteknop">Delete all articles</i></button>
+        {{-- <a href="" id="deleteknop">Delete all articles</a> --}}
+    </form>
     <div class="artikels">
 
 

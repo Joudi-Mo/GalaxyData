@@ -63,11 +63,8 @@ input {
     border: none;
     border-radius: 6px;
     transition: all 0.3s ease;
-    /* border: 2px solid red; */
 }
-input:focus{
-    /* border: 2px solid green; */
-}
+
 .artikels {
     height: 100%;
 }
@@ -81,7 +78,6 @@ input:focus{
     color: white;
     background-color: #242b36;
     border-radius: 20px;
-    /* padding: 3px 7px 3px 7px; */
     padding: 8px 12px;
     display: flex;
     justify-content: center;
@@ -147,7 +143,7 @@ input:focus{
 .username {
     margin-right: 20px;
     font-family: "Poppins", sans-serif;
-    color: #00e783;
+    color: #34A172;
     font-weight: 400;
     font-size: 16px;
 }

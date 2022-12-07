@@ -43,6 +43,9 @@ Route::post('/articleadd', [ListingController::class, 'store']);
 
 // delete single article
 Route::delete('/listing/{id}', [ListingController::class, 'destroy']);
+
+//delete all articles of one user
+Route::delete('/listings', [ListingController::class, 'destroyAll']);
     
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
