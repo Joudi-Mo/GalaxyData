@@ -29,6 +29,11 @@ class Article extends Model
         return $this->belongsToMany(Tag::class, 'article_tags');// article_tag
     }
 
+    public function ruser()
+    {
+        return $this->belongsToMany(User::class, 'ratings');// article_tag
+    }
+
     //  //tag filtering voor de homepagina
     //  public function scopeFilter($query, array $filters){
     //     // dd($filters('tag'));

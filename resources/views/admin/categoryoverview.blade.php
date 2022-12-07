@@ -18,7 +18,7 @@
 
     <div class="table-container">
         <div class="tablebutton">
-            <a class="" href="categoryadd"><button class="yes">Add category</button></a>
+            <a class="" href="categoryadd"><button class="buttonfortable">Add category</button></a>
         </div>
       
        

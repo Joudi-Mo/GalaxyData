@@ -113,3 +113,22 @@ i {
     display: flex;
     justify-content: center;
 }
+
+.buttonfortable {
+    padding: 2px 30px;
+    background-color: rgba(0, 231, 131, 1);
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #242b36;
+    font-weight: 500;
+}
+
+.buttonfortable:hover {
+    background-color: rgba(0, 231, 131, 0.5);
+}

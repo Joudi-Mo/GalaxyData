@@ -16,20 +16,22 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('admin.categoryadd');
+        return view('admin/categoryadd');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        // dd($request);
         $formFields = $request->validate([
             'category' => 'required',
-           
-            
+
+
         ]);
 
-       
+
 
         Category::create($formFields);
 
-        return redirect('/category')->with('message', 'Category created successfully!');
+        return redirect('admin/category')->with('message', 'Category created successfully!');
     }
 }

@@ -15,10 +15,10 @@
 <body>
     @include('header')
 
-    <form action="/categoryaddverwerk" method="POST">
+    <form action="/admin/categoryaddverwerk" method="POST">
      @csrf
-        <div class="table-container">
-          
+        <div class="table-container"> 
+            
           <h1>Add Category</h1>
           
           <div class="search">

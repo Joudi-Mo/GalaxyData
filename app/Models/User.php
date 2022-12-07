@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    public function rarticles()
+    {
+        return $this->belongsToMany(Article::class, 'ratings');// article_tag
+    }
 }

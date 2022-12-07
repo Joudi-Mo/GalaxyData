@@ -65,14 +65,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/category', [CategoryController::class, 'index']);
 
 
-        
+
         Route::get('/users', [UserController::class, 'index']);
 
 
         Route::get('/categoryadd', [CategoryController::class, 'create']);
 
         Route::post('/categoryaddverwerk', [CategoryController::class, 'store']);
-
-
     });
 });
