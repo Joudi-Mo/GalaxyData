@@ -66,10 +66,16 @@
                     <div class="onderkant">
                         <div class="onderkantlinks">
                             <div class="username">
-                                {{ $listing->user->name }}
+                                @if (!is_null($listing->user))
+                                {{ $listing->user->name}}
+
+
+                                @else
+                                deleted user
+                                @endif
                             </div>
                             {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
-                            <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div>
+                            {{-- <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div> --}}
 
                         </div>
                         <div class="onderkantrechts">
