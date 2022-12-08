@@ -67,15 +67,13 @@
                         <div class="onderkantlinks">
                             <div class="username">
                                 @if (!is_null($listing->user))
-                                {{ $listing->user->name}}
+                                {{ $listing->user->name }}
 
 
                                 @else
-                                deleted user
+                                Deleted user
                                 @endif
                             </div>
-                            {{-- <div class="datum">{{ $listing->user->created_at }}</div> --}}
-                            {{-- <div class="datum">{{ date('d-m-Y', strtotime($listing->user->created_at)) }}</div> --}}
 
                         </div>
                         <div class="onderkantrechts">
