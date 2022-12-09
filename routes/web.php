@@ -78,3 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('/myarticles', [UserController::class, 'showArticles'])->middleware('auth');
+
+
+Route::post('/like', 'LikeController@like')->name('like');
+Route::post('/dislike', 'LikeController@dislike')->name('dislike');
