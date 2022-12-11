@@ -83,10 +83,10 @@
                         <div class="onderkantrechts">
                             <div class="tags">
                                 <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-up" id="like-button"></i> {{$listing->likes}}
+                                    <i class="fa-solid fa-thumbs-up like-button" data-id="{{$listing->id}}" id="like-button"></i> {{$listing->likes}}
                                 </div>
                                 <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-down" id="dislike button"></i> {{$listing->dislikes}}
+                                    <i class="fa-solid fa-thumbs-down dislike-button"  data-id="{{$listing->id}}" id="dislike button"></i> {{$listing->dislikes}}
                                 </div>
                             </div>
                         </div>
