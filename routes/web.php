@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ratingController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -18,6 +19,7 @@ use GuzzleHttp\Middleware;
 |
 */
 Route::get('/', [ListingController::class, 'index']);
+Route::post('/', [ratingController::class, 'likedislike']);
 
 Route::get('/about', function () {
     return view('contact');
@@ -77,3 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/myarticles', [UserController::class, 'showArticles'])->middleware('auth');
+
+
+Route::post('/like', 'LikeController@like')->name('like');
+Route::post('/dislike', 'LikeController@dislike')->name('dislike');

@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>Home</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -79,10 +83,10 @@
                         <div class="onderkantrechts">
                             <div class="tags">
                                 <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-up"></i> {{$listing->likes}}
+                                    <i class="fa-solid fa-thumbs-up like-button" data-id="{{$listing->id}}" id="like-button"></i> {{$listing->likes}}
                                 </div>
                                 <div class="artikeltag">
-                                    <i class="fa-solid fa-thumbs-down"></i> {{$listing->dislikes}}
+                                    <i class="fa-solid fa-thumbs-down dislike-button"  data-id="{{$listing->id}}" id="dislike button"></i> {{$listing->dislikes}}
                                 </div>
                             </div>
                         </div>
