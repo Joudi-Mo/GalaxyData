@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="{{asset('css/app.css')}}">
-    
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
     <link rel="stylesheet" href="{{asset('css/table.css')}}">
     <script src="https://kit.fontawesome.com/3f5b3fe9f7.js" crossorigin="anonymous"></script>
     <title>Categories</title>
@@ -15,23 +15,18 @@
 <body>
     @include('header')
 
-
     <div class="table-container">
         <div class="tablebutton">
             <a class="" href="categoryadd"><button class="buttonfortable">Add category</button></a>
         </div>
-      
-       
+
         <table class="table">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Category name</th>
                     <th>Created at</th>
-               
                     <th></th>
-                    {{-- <th></th> --}}
-                   
                 </tr>
             </thead>
             <tbody>
@@ -41,14 +36,12 @@
                     <td data-label="id">{{$cat->id}}</td>
                     <td data-label="firstname">{{$cat->category}}</td>
                     <td data-label="firstname">{{ date('d-m-Y', strtotime($cat->created_at)) }}</td>
-                  
-                   
-                    
-                    {{-- <td data-label="update"><a href="klanten-update.php?id={{$user->id}}"
-                            class="btn">update</a></td> --}}
-
-                    <td data-label="verwijder"><a href="php/klanten-delete-verwerk.php?id={{$cat->id}}"
-                            class="btn"><i class="fa-solid fa-trash"></i></a>
+                    <td data-label="verwijder">
+                        <form action="/category/{{$cat->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button id="deleteknop"><i class="fa-solid fa-trash"></i></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

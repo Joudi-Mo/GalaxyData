@@ -35,7 +35,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Joudi',
             'email' => 'joudi@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('qweasd123'),
+            // This will turn the password into an unintelligible series of numbers and letters (hashing/encrypting).
+            // to protect the database if it got attacked
+            'password' => Hash::make('joudi'),
             'is_admin' => '1',
             'remember_token' => Str::random(10)
         ]);

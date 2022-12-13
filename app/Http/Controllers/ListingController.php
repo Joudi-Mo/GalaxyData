@@ -32,6 +32,7 @@ class ListingController extends Controller
     {
         return view('users.articleadd', [
             'categories' => Category::all(),
+            'tags'      => Tag::all()
         ]);
     }
 
@@ -43,13 +44,15 @@ class ListingController extends Controller
             'category_id' => 'required',
 
         ]);
-
         $formFields['user_id'] = auth()->id();
         $formFields['is_populair'] = '0';
         $formFields['likes'] = '0';
         $formFields['dislikes'] = '0';
 
-        Article::create($formFields);
+        $article = Article::create($formFields);
+
+        $article->tags()->attach($request->tags);
+
         return redirect('/')->with('message', 'Listing created successfully!');
     }
 
@@ -76,5 +79,4 @@ class ListingController extends Controller
         }
         return redirect('/myarticles')->with('message', 'Article deleted succesfully');
     }
-
 }

@@ -30,7 +30,6 @@
     </form>
     <div class="artikels">
 
-
         @unless(count($listings) == 0)
         @foreach($listings as $listing)
         <div class="artikel">

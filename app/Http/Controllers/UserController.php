@@ -84,7 +84,7 @@ class UserController extends Controller
         $ownListings = Article::all()->where('user_id', Auth::id());
 
         return view('users/myarticles', [
-            'userID' => Auth::id(),
+            // 'userID' => Auth::id(),
             'listings' => $ownListings,
         ]);
     }

@@ -33,8 +33,6 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 //create new user
 Route::post('/users', [UserController::class, 'store']);
 
-
-
 //show article add form
 Route::get('/articleaddpage', [ListingController::class, 'create'])->middleware('auth');
 
@@ -50,6 +48,8 @@ Route::delete('/listing/{id}', [ListingController::class, 'destroy']);
 //delete all articles of one user
 Route::delete('/listings', [ListingController::class, 'destroyAll']);
 
+// delete single article
+Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
@@ -75,6 +75,5 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/categoryaddverwerk', [CategoryController::class, 'store']);
     });
 });
-
 
 Route::get('/myarticles', [UserController::class, 'showArticles'])->middleware('auth');
