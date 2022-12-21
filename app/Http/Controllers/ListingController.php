@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
+    //laat artikelen zien 
     public function index(Request $request, SearchService $service)
     {
         if ($request->has('search')) {
@@ -27,7 +28,7 @@ class ListingController extends Controller
             'tests' => Tag::inRandomOrder()->limit(3)->get() //Stuur drie random tags
         ]);
     }
-
+    // laat de maak artikel pagina zien 
     public function create()
     {
         return view('users.articleadd', [
@@ -35,7 +36,7 @@ class ListingController extends Controller
             'tags'      => Tag::all()
         ]);
     }
-
+    // zet het gemaakte artikel in de database
     public function store(Request $request)
     {
         $formFields = $request->validate([
